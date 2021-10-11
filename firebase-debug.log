@@ -1,0 +1,13 @@
+[debug] [2021-10-11T15:49:34.870Z] ----------------------------------------------------------------------
+[debug] [2021-10-11T15:49:34.873Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sangwook\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2021-10-11T15:49:34.873Z] CLI Version:   9.12.1
+[debug] [2021-10-11T15:49:34.873Z] Platform:      win32
+[debug] [2021-10-11T15:49:34.873Z] Node Version:  v14.15.4
+[debug] [2021-10-11T15:49:34.875Z] Time:          Tue Oct 12 2021 00:49:34 GMT+0900 (대한민국 표준시)
+[debug] [2021-10-11T15:49:34.875Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-11T15:49:34.884Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-11T15:49:34.885Z] > authorizing via signed-in user (mcmcngo0109@gmail.com)
+[debug] [2021-10-11T15:49:34.885Z] [iam] checking project test-cab-c2c09 for permissions ["firebase.projects.get"]
+[debug] [2021-10-11T15:49:34.887Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/test-cab-c2c09:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
