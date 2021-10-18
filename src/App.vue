@@ -1,15 +1,13 @@
 <template>
   <v-app id="app">
-    <template v-if="!$route.name == 'home'">
-      <v-app-bar app color="primary" dark>
+    <template>
+      <v-app-bar app color="primary" dark v-if="!$route.name == 'login'">
         <v-app-bar-nav-icon @click="drawer = !drawer" />
         <site-title :title="site.title"></site-title>
         <v-spacer />
         <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
         <v-btn icon @click="read"><v-icon>mdi-numeric</v-icon></v-btn>
-        <v-btn icon @click="readOne"
-          ><v-icon>mdi-account-badge-alert</v-icon></v-btn
-        >
+        <v-btn icon @click="readOne"><v-icon>mdi-account-supervisor-circle</v-icon></v-btn>
       </v-app-bar>
       <v-navigation-drawer app v-model="drawer">
         <site-menu :items="site.menu"></site-menu>
@@ -17,13 +15,8 @@
       <v-content>
         <router-view />
       </v-content>
-      <site-footer :footer="site.footer"></site-footer>
+      <site-footer :footer="site.footer" v-if="!$route.name == 'login'"></site-footer>
     </template>
-      <v-content>
-         <keep-alive :include="['Home']">
-            <router-view></router-view>
-         </keep-alive>
-      </v-content>
   </v-app>
 </template>
 
@@ -41,7 +34,7 @@ export default {
       site: {
         menu: [],
         title: '나의 타이틀입니다',
-        footer: '푸터입니다'
+        footer: '대한예수교침례회'
       }
     }
   },
@@ -50,23 +43,6 @@ export default {
   },
   methods: {
     subscribe () {
-      this.$firebase
-        .database()
-        .ref()
-        .child('site')
-        .on(
-          'value',
-          (sn) => {
-            const v = sn.val()
-            if (!v) {
-              this.$firebase.database().ref().child('site').set(this.site)
-            }
-            this.site = v
-          },
-          (e) => {
-            console.log(e.message)
-          }
-        )
     },
     save () {
       console.log('save@@@')

@@ -3,10 +3,10 @@
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title class="title">
-          Application
+          대한예수교침례회
         </v-list-item-title>
         <v-list-item-subtitle>
-          subtext
+          수회교회 성도주소록
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -45,31 +45,49 @@ export default {
     return {
       items: [
         {
-          title: 'home',
+          title: '관리',
+          active: true,
           icon: 'mdi-home',
           subItems: [
             {
-              title: 'Dashboard',
+              title: '성도 관리',
               to: '/'
             },
             {
-              title: 'About',
+              title: '차량 관리',
+              to: '/about'
+            },
+            {
+              title: '등록 관리',
+              to: '/about'
+            },
+            {
+              title: '공지 관리',
+              to: '/about'
+            },
+            {
+              title: '출결 관리',
               to: '/about'
             }
           ]
         },
         {
-          title: 'about',
+          title: '정보',
           active: true,
           icon: 'mdi-account',
           subItems: [
             {
-              title: 'xxx',
+              title: '기본 정보',
+              to: '/xxx'
+            },
+            {
+              title: '안내 정보',
               to: '/xxx'
             }
           ]
         }
-      ]
+      ],
+      active: true
     }
   }
 }
